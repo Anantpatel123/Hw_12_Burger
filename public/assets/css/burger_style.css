@@ -1,0 +1,33 @@
+
+.container {
+    background-color: cyan;
+    width: 70%;
+}
+body {
+    background-color: bisque;
+}
+h1 {
+    font: bold;
+    font-size: 50px;
+    color: black;
+}
+.submitbtn {
+    font-size: 20px;
+    height: 40px;
+    width: 150px;
+    background-color: dimgray;
+    text-align: unset;
+}
+.devourbtn {
+   background-color: beige;   
+}
+textarea {
+    width: 240px;
+    height: 35px;
+    font-size: 20px;
+}
+.makeburger {
+    margin-top: -10px;
+    font-size: 30px;
+    padding: 12px;
+}

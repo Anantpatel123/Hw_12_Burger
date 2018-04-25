@@ -15,49 +15,49 @@
 	</div>
 <hr>
 	<div class="row">
-<center>
+<left>
 <div class="col-md-4">
 			<h3 class="text-center text-danger">Burgers-To-Eat!</h3><hr>
 			<ul>
 				{{#each burger}}
 					{{#unless this.devoured}}						
-							<h5>{{this.id}}. {{this.burger_name}}
+							<h4>{{this.id}}. {{this.burger_name}}
 								<form action='/api/update/{{this.id}}?_method=PUT' method='POST'>
 									<input type='hidden' name='devoured' value='true'>
-									<button type='submit' class="btn btn-default" id="devourbtn">Devour It!</button>
+									<button type='submit' class="btn btn-default devourbtn">Devour It!</button>
 								</form>
-							</h5>
+							</h4>
 						
 					{{/unless}}
 				{{/each}}
 			</ul>
 		</div>
-</center>
+</left>
 		
 <center>
 <div class="col-md-4">
 			<form class="create-update-form" action="/api/burgers" method="POST">
 				<div class="form-group">
-					<h3 class="text-center text-danger">Make-A-Burger!</h3><hr><br>
+					<h2 class="text-center text-danger makeburger">Make-A-Burger!</h2><hr><br>
 					<textarea type="text" name="name"></textarea><br><br>
-					<button class="btn btn-default" type="submit">Submit</button>
+					<button class="btn btn-default submitbtn" type="submit">Submit</button>
 				</div>
 			</form>
 		</div>
 </center>
 		
-<center>
+<left>
 <div class="col-md-4">
 			<h3 class="text-center text-danger">Eaten-Burgers</h3><hr>
 			<ul>
 				{{#each burger}}
 					{{#if this.devoured}}
-							<h5 class="text-muted">{{this.id}}. {{this.burger_name}}</h5>
+							<h4 class="text-muted">{{this.id}}. {{this.burger_name}}</h4>
 					{{/if}}
 				{{/each}}
 			</ul>
 		</div>
-</center>
+</left>
 		
 	</div>
 </div>
