@@ -30,28 +30,6 @@ var routes = require("./controllers/burgers_controller.js");
 
 app.use("/",routes);
 
-
-// working. Showing all of burgers from the database.
-// app.get("/", function(req, res) {
-//     connection.query("SELECT * FROM menu;", function(err, data) {
-//       if (err) throw err;
-//       res.render("index", {burgers: data});
-//     });
-// });
-
-// working. Updating burger to the database.
-// app.post("/", function(req, res) {
-//     connection.query("INSERT INTO menu (burger_name) VALUES (?)", [req.body.burger_name], function(err, result) {
-//       if (err) {
-//         return res.status(500).end();
-//       }
-//       res.redirect("/");
-//       console.log(result);
-//     //   res.json({ id: result.insertId});      
-//     });
-//   });
-
-
 // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function() {
     // Log (server-side) when our server has started
