@@ -20,12 +20,11 @@
 			<h3 class="text-center text-danger">Burgers-To-Eat!</h3><hr>
 			<ul>
 				{{#each burger}}
-					{{#unless this.devoured}}
-						
+					{{#unless this.devoured}}						
 							<h5>{{this.id}}. {{this.burger_name}}
 								<form action='/api/update/{{this.id}}?_method=PUT' method='POST'>
 									<input type='hidden' name='devoured' value='true'>
-									<button type='submit' class="btn btn-default">Devour It!</button>
+									<button type='submit' class="btn btn-default" id="devourbtn">Devour It!</button>
 								</form>
 							</h5>
 						
