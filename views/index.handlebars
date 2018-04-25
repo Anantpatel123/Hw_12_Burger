@@ -1,0 +1,64 @@
+<div class="container">
+
+	<div class="row">
+
+		<div class="col-md-12">
+			<img src="/assets/image/burger.png" alt="burger" class="img-responsive center-block" height="250px" width="200px">
+		</div>
+	</div>
+
+	<div class="row">
+
+		<div class="col-md-12">
+			<h1 class="text-center text-danger">Eat-Da-Burger</h1>
+		</div>
+	</div>
+<hr>
+	<div class="row">
+<center>
+<div class="col-md-4">
+			<h3 class="text-center text-danger">Burgers-To-Eat!</h3><hr>
+			<ul>
+				{{#each burger}}
+					{{#unless this.devoured}}
+						
+							<h5>{{this.id}}. {{this.burger_name}}
+								<form action='/api/update/{{this.id}}?_method=PUT' method='POST'>
+									<input type='hidden' name='devoured' value='true'>
+									<button type='submit' class="btn btn-default">Devour It!</button>
+								</form>
+							</h5>
+						
+					{{/unless}}
+				{{/each}}
+			</ul>
+		</div>
+</center>
+		
+<center>
+<div class="col-md-4">
+			<form class="create-update-form" action="/api/burgers" method="POST">
+				<div class="form-group">
+					<h3 class="text-center text-danger">Make-A-Burger!</h3><hr><br>
+					<textarea type="text" name="name"></textarea><br><br>
+					<button class="btn btn-default" type="submit">Submit</button>
+				</div>
+			</form>
+		</div>
+</center>
+		
+<center>
+<div class="col-md-4">
+			<h3 class="text-center text-danger">Eaten-Burgers</h3><hr>
+			<ul>
+				{{#each burger}}
+					{{#if this.devoured}}
+							<h5 class="text-muted">{{this.id}}. {{this.burger_name}}</h5>
+					{{/if}}
+				{{/each}}
+			</ul>
+		</div>
+</center>
+		
+	</div>
+</div>
